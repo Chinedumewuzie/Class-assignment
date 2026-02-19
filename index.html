@@ -1,34 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Nigeria GDP (Last 5 Years)</title>
-  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TFJS Visor Task</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+    h1 {
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 16px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+  </style>
 </head>
-
 <body>
-  <h3>Nigeria GDP for the Past Five Years</h3>
 
-  <script>
-    // GDP values in billions of USD
-    const gdpData = [
-      { index: "2020", value: 432 },
-      { index: "2021", value: 441 },
-      { index: "2022", value: 477 },
-      { index: "2023", value: 503 },
-      { index: "2024", value: 515 }
-    ];
+  <h1>TensorFlow.js Visor Chart</h1>
+  <p>This page fetches users from an API and plots a chart using tfjs-vis.</p>
 
-    tfvis.render.barchart(
-      { name: "Nigeria GDP (USD Billions)", tab: "chart" },
-      gdpData,
-      {
-        xLabel: "Year",
-        yLabel: "GDP (USD Billions)",
-        height: 400
-      }
-    );
-  </script>
+  <button onclick="runBarChart()">Plot Bar Chart</button>
+  <button onclick="runLineChart()">Plot Line Chart</button>
+
+  <hr />
+
+  <h2>Multiply Function Test</h2>
+  <p id="multiplyResult"></p>
+
+  <!-- TensorFlow.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+
+  <!-- TensorFlow.js Visor CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis@latest"></script>
+
+  <!-- Your JS -->
+  <script src="./script.js"></script>
 
 </body>
 </html>
